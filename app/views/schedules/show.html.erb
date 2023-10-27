@@ -20,11 +20,11 @@
    </tr>
    <tr>
      <th>開始日</th>
-     <td><%= @schedule.start_date %></td>
+     <td><%= @schedule.start_date.to_s(:date) %></td>
    </tr>
    <tr>
      <th>終了日</th>
-     <td><%= @schedule.end_date %></td>
+     <td><%= @schedule.end_date.to_s(:date) %></td>
    </tr>
    <tr>
      <th>終日</th>

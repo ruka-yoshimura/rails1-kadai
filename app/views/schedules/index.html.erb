@@ -24,13 +24,12 @@
    </thead>
  
    <tbody>
-   <%# <% if @schedules.count > 0 %>
      <% @schedules.each do |schedule| %>
        <tr>
          <td><%= schedule.id %></td>
          <td><%= schedule.title %></td>
-         <td><%= schedule.start_date %></td>
-         <td><%= schedule.end_date %></td>
+         <td><%= schedule.start_date.to_s(:date) %></td>
+         <td><%= schedule.end_date.to_s(:date) %></td>
          <td><% if schedule.is_all_day  == true %>
           ○
          <% else schedule.is_all_day == false %>

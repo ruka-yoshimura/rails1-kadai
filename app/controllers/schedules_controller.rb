@@ -10,7 +10,6 @@ class SchedulesController < ApplicationController
 
   def create
     @schedule = Schedule.new(params.require(:schedule).permit(:title, :start_date, :end_date, :is_all_day, :memo))
-    # binding.pry
      if @schedule.save
       flash[:success] = "スケジュールを登録しました"
        redirect_to :schedules
