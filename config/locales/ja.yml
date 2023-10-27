@@ -5,6 +5,6 @@ ja:
     attributes:
       schedule:
         title: タイトル
-        StartDate: 開始日
-        EndDate: 終了日
+        start_date: 開始日
+        end_date: 終了日
         is_all_day: 終日

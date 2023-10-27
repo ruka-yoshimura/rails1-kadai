@@ -9,7 +9,7 @@ class SchedulesController < ApplicationController
   end
 
   def create
-    @schedule = Schedule.new(params.require(:schedule).permit(:title, :StartDate, :EndDate, :is_all_day, :memo))
+    @schedule = Schedule.new(params.require(:schedule).permit(:title, :start_date, :end_date, :is_all_day, :memo))
     # binding.pry
      if @schedule.save
       flash[:success] = "スケジュールを登録しました"
@@ -30,7 +30,7 @@ class SchedulesController < ApplicationController
   
   def update
     @schedule = Schedule.find(params[:id])
-    if @schedule.update(params.require(:schedule).permit(:title, :StartDate, :EndDate, :is_all_day, :memo))
+    if @schedule.update(params.require(:schedule).permit(:title, :start_date, :end_date, :is_all_day, :memo))
       flash[:success] = "スケジュールを更新しました"
       redirect_to :schedules
     else
