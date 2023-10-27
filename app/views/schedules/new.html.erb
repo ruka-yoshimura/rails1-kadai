@@ -1,0 +1,53 @@
+<header>
+<h2>スケジュール管理アプリ</h2>
+</header>
+
+
+<div class="main">
+
+
+<h3>予定の新規追加</h3>
+
+ <%= render "shared/error", obj: @schedule %>
+
+ <%= form_with model: @schedule do |f| %>
+
+<table>
+     <tr>
+       <th><%= f.label :title ,"タイトル" %></th>
+       <td><%= f.text_field :title %></td>
+     </tr>
+ 
+     <tr>
+       <th><%= f.label :StartDate ,"開始日" %></th>
+       <td><%= f.date_field :StartDate %></td>
+     </tr>
+ 
+     <tr>
+       <th><%= f.label :EndDate ,"終了日" %></th>
+       <td><%= f.date_field :EndDate %></td>
+     </tr>
+
+     <tr>
+       <td><%= f.check_box :is_all_day %>
+       <th><%= f.label :is_all_day ,"終日の場合はチェックを入れます" %></th>
+     </tr>
+ 
+     <tr>
+       <th><%= f.label :memo ,"スケジュールメモ" %></th>
+       <td><%= f.text_area :memo %></td>
+     </tr>
+   </table>
+
+   <div>
+     <ul>
+       <li><%= f.submit "保存"%></li>
+       <li><%= link_to "キャンセル", :schedules %></li>
+     </ul>
+   </div>
+    <% end %>
+
+    <% if flash[:failure] %>
+   <p class="failure"><%= flash[:failure] %></p>
+ <% end %>
+</div>
